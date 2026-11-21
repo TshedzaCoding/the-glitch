@@ -19,3 +19,31 @@ buttons.forEach((button) => {
     });
   });
 });
+
+// Live Newspaper Date
+const dateEl = document.getElementById("live-date");
+if (dateEl) {
+  const today = new Date();
+  dateEl.textContent = today.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+// Paper Theme Switcher
+const themeButtons = document.querySelectorAll(".theme-btn");
+themeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    themeButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const theme = btn.dataset.theme;
+    if (theme === "newsprint") {
+      document.documentElement.removeAttribute("data-theme");
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+  });
+});

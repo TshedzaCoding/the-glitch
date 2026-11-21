@@ -14,31 +14,64 @@
     />
   </head>
   <body>
-    <head class="masthead">
-      <div class="masthead-top">
-        <span class="ear">PRICE: $0.00 (SYSTEM ERROR)</span>
-        <span class="ear">VOL. 01 - NO. 001 | NO PAYWALLS</span>
+    <header class="masthead">
+      <!-- Band 1: Utility & Theme Switcher -->
+      <div class="masthead-utility">
+        <span>VOL. 01 — NO. 001 | FREE EDITION</span>
+        <div class="theme-switcher">
+          <button class="theme-btn active" data-theme="newsprint">
+            NEWSPRINT
+          </button>
+          <button class="theme-btn" data-theme="aged">AGED</button>
+          <button class="theme-btn" data-theme="night">NIGHT INK</button>
+        </div>
       </div>
-      <div class="masthead-title">
-        <h1>THE GLITCH</h1>
-        <p class="tagline">Built well. Priced wrong.</p>
+
+      <!-- Band 2: Boxed Ears + Main Title -->
+      <div class="masthead-main">
+        <div class="ear-box">
+          <strong>PRICE: $0.00</strong>
+          <span>SYSTEM ERROR</span>
+        </div>
+
+        <div class="masthead-title">
+          <h1>THE GLITCH</h1>
+        </div>
+
+        <div class="ear-box">
+          <strong>NO PAYWALLS.</strong>
+          <span>FREE 99.</span>
+        </div>
       </div>
+
+      <!-- Band 3: Live Date Bar -->
+      <div class="masthead-datebar">
+        <span id="live-date">LOADING DATE...</span>
+        <span>"Built well. Priced wrong."</span>
+        <span>TECH GAME REVIEW</span>
+      </div>
+
+      <!-- Band 4: Full Category Navigation -->
       <nav class="main-nav">
-        <a href="#">Latest</a>
+        <a href="index.html" class="active-nav">Front Page</a>
         <a href="#">Tech</a>
         <a href="#">Games</a>
-        <a href="#">Breaking Wire</a>
+        <a href="#">Hardware</a>
+        <a href="#">Reviews</a>
+        <a href="#">The Wire</a>
       </nav>
-    </head>
+    </header>
     <main class="broadsheet-grid">
       <!-- Column 1: Lead Story -->
       <article class="lead-story">
         <sapn class="tag">TECH</sapn>
-        <img
-          src="images/gpu.jpg"
-          alt="Next-gen graphics card"
-          class="article-img"
-        />
+        <div class="glitch-art">
+          <img
+            src="images/gpu.jpg"
+            alt="Next-gen graphics card"
+            class="article-img"
+          />
+        </div>
         <a href="article.html?id=gpu-cables" class="headline-link">
           <h2>Next-Gen GPUs Are finally Ditching Proprietary Cables</h2>
         </a>
@@ -92,6 +125,25 @@
         </ul>
       </aside>
     </main>
+    <!-- Hovering Paper Article Modal -->
+    <div id="article-modal" class="modal-backdrop" aria-hidden="true">
+      <article class="modal-paper">
+        <div class="modal-topbar">
+          <span class="tag" id="modal-tag"></span>
+          <button id="modal-close" class="modal-close">[ X ] CLOSE</button>
+        </div>
+
+        <h1 id="modal-title"></h1>
+        <p class="byline" id="modal-byline"></p>
+
+        <div class="glitch-art">
+          <img id="modal-img" class="article-img" src="" alt="" />
+        </div>
+
+        <div id="modal-body"></div>
+      </article>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
