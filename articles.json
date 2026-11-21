@@ -1,0 +1,24 @@
+[
+  {
+    "id": "gpu-cables",
+    "tag": "TECH",
+    "title": "Next-Gen GPUs Are Finally Ditching Proprietary Cables",
+    "byline": "BY T. MATHALISE — NOVEMBER 2026",
+    "image": "images/gpu.jpg",
+    "body": [
+      "After years of melted connectors and bulky adapters, hardware makers are quietly standardizing around a single, open power spec.",
+      "For PC builders, this means cleaner cable management, safer power delivery, and no more hunting for third-party adapters."
+    ]
+  },
+  {
+    "id": "indie-rpg",
+    "tag": "GAMES",
+    "title": "Indie Studio Ships 60fps Open-World RPG Under 4GB",
+    "byline": "BY T. MATHALISE — NOVEMBER 2026",
+    "image": "images/gpu.jpg",
+    "body": [
+      "Smart procedural textures prove modern games do not need 150GB installs to look sharp and run smoothly.",
+      "The two-person dev team built custom compression tools that stream world geometry on the fly."
+    ]
+  }
+]

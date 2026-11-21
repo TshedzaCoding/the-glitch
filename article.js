@@ -1,0 +1,30 @@
+// 1. Read the ?id= value from the URL
+const params = new URLSearchParams(window.location.search);
+const articleId = params.get("id");
+
+// 2. Fetch articles.json and find the matching story
+fetch("articles.json")
+  .then((res) => res.json())
+  .then((articles) => {
+    const story = articles.find((a) => a.id === articleId);
+
+    if (!story) {
+      document.getElementById("art-title").textContent = "404 — Story Not Found";
+      return;
+    }
+
+    // 3. Inject the story into the HTML
+    document.title = `${story.title} — THE GLITCH`;
+    document.getElementById("art-tag").textContent = story.tag;
+    document.getElementById("art-title").textContent = story.title;
+    document.getElementById("art-byline").textContent = story.byline;
+    document.getElementById("art-img").src = story.image;
+
+    const bodyContainer = document.getElementById("art-body");
+    story.body.forEach((paragraph, index) => {
+      const p = document.createElement("p");
+      p.textContent = paragraph;
+      if (index === 0) p.classList.add("drop-cap"); // Drop cap on first paragraph
+      bodyContainer.appendChild(p);
+    });
+  });
