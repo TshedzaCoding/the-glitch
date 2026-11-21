@@ -1,0 +1,170 @@
+/* 1. Color Palette & Reset */ 
+:root{
+    --paper: #f4f13a; 
+    --ink: #111111; 
+    --accent: #ff0055; 
+}
+
+*{
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body{
+    background-color: var(--paper);
+    color: var(--ink); 
+    font-family: Georgia, "Time New Roman", serif;
+    padding: 20px; 
+}
+
+/*2. Masthhead Container */ 
+.masthead-top{
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 3. Top Ears (Flexbox pushes them to opposite sides) */ 
+.masthead-top{
+    display: flex;
+    justify-content: space-between; 
+    font-family: monospace; 
+    font-size: 0.75rem; 
+    border-bottom: 1px solid var(--ink); 
+    padding-bottom: 8px; 
+}
+
+/* 4. Main Title & Tagline */ 
+.masthead-title{
+    padding: 24px 0;
+}
+
+.masthead-title h1{
+    font-size: 4rem;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.tagline{
+    font-family: monospace;
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    margin-top: 8px; 
+    letter-spacing: 1px;
+}
+
+/* 5. Navigation Bar */ 
+.main-nav{
+    display: flex;
+    justify-content: center;
+    gap: 24px; 
+    border-top: 2x solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 12px 0; 
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: var(--ink);
+    font-family: monospace;
+    font-weight: bold; 
+    text-transform: uppercase;
+    font-size: 0.85rem; 
+}
+
+.main-nav a:hover{
+    color: var(--accent); 
+}
+
+/* 6. 3-column Broadsheet Grid */ 
+.broadsheet-grid{
+    max-width: 1100px;
+    margin: 24px auto 0; 
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1fr;
+    gap: 24px;
+}
+
+/* Column Divides (Hairline Borders) */ 
+.lead-story, 
+.secondary-stories{
+    border-right: 1px solid var(--ink);
+    padding-right: 24px;
+}
+
+/* Tags & Metadata */ 
+.tag{
+    display: inline-block;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    background-color: var(--ink);
+    color: var(--paper);
+    padding: 2px 6px;
+    margin-bottom: 10px;
+}
+
+.byline{
+    font-family: monospace;
+    font-size: 0.75rem;
+    margin: 10px 0 14px;
+    opacity: 0.75;
+}
+
+/* Typography */ 
+.lead-story h2{
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+.story-card{
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--ink);
+}
+
+.story-card:last-child{
+    border-bottom: none;
+}
+
+.story-card h3{
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.excerpt{
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 7. Breaking Wire (Column 3) */ 
+.wire-header{
+    font-family: monospace; 
+    font-size: 0.9rem;
+    color: var(--accent); 
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+}
+
+.wire-list{
+    list-style: none;
+}
+
+.wire-list li{
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed rgba(17, 17, 17, 0.3);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.time{
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+}
