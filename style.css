@@ -168,3 +168,54 @@ body{
     display: block;
     margin-bottom: 4px;
 }
+
+/* 8. Mobile Responsiveness */ 
+@media (max-width: 768px){
+    /* collapse 3 columns into 1 stacked column */ 
+    .broadsheet-grid{
+        grid-template-columns: 1fr;
+    }
+
+    /* Swap vertical column borders for horizontal dividers */ 
+    .lead-story
+    .secondary-stories{
+        border-right: none; 
+        padding-right: 0;
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 24px;
+    }
+
+    /* Scale down the masthead for smaller screens */ 
+    .masthead-title h1{
+        font-size: 2.5rem; 
+    }
+
+    .masthead-top{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+/* 9. Wire Filter Buttons */ 
+.wire-filters{
+    display: flex; 
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.filter-btn{
+    background: transparent; 
+    border: 1px solid var(--ink); 
+    color: var(--ink); 
+    font-family: monospace; 
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.filter-btn.active{
+    background: var(--accent); 
+    border-color: var(--accent);
+    color: var(--paper); 
+}

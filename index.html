@@ -49,20 +49,25 @@
       <!-- Column 3: Break Wire -->
       <aside class="breaking-wire">
         <h2 class="wire-header">BREAKING WIRE</h2>
+        <div class="wire-filters">
+          <button class="filter-btn active" data-filter="all">ALL</button>
+          <button class="filter-btn" data-filter="tech">TECH</button>
+          <button class="filter-btn" data-filter="games">GAMES</button>
+        </div>
         <ul class="wire-list">
-          <li>
+          <li data-category="tech">
             <span class="time">16:20</span>
             <p>
               Major browser engine drops manifest restrictions for ad blockers.
             </p>
           </li>
-          <li>
+          <li data-category="games">
             <span class="time">15:45</span>
             <p>
               Surprise console firmware update adds native frame-rate counter.
             </p>
           </li>
-          <li>
+          <li data-category="tech">
             <span class="time">14:10</span>
             <p>
               Open-source AI coding tool hits 1M local downloads in 48 hours.
@@ -71,5 +76,6 @@
         </ul>
       </aside>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
