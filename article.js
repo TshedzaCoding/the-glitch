@@ -27,12 +27,20 @@ fetch("articles.json")
     document.getElementById("art-img").src = story.image;
 
     const bodyContainer = document.getElementById("art-body");
-    story.body.forEach((paragraph, index) => {
-      const p = document.createElement("p");
-      p.textContent = paragraph;
-      if (index === 0) p.classList.add("drop-cap"); // Drop cap on first paragraph
-      bodyContainer.appendChild(p);
-    });
+story.body.forEach((paragraph, index) => {
+  const p = document.createElement("p");
+  p.textContent = paragraph;
+  if (index === 0) p.classList.add("drop-cap");
+  bodyContainer.appendChild(p);
+
+  // Insert the pull quote right after the first paragraph
+  if (index === 0 && story.pullQuote) {
+    const quote = document.createElement("blockquote");
+    quote.className = "pull-quote";
+    quote.textContent = story.pullQuote;
+    bodyContainer.appendChild(quote);
+  }
+});
   });
 
  

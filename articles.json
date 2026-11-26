@@ -1,28 +1,32 @@
 [
-  {
+ {
     "id": "gpu-cables",
+    "featured": true,
+    "frontPage": true,
+    "category": "tech",
     "tag": "TECH",
     "title": "Next-Gen GPUs Are Finally Ditching Proprietary Cables",
-    "deck": "Hardware makers are quietly standardizing around a single, open power spec after years of melted connectors.",
-    "byline": "BY T. MATHALISE — NOVEMBER 2026 • $0.00",
+    "byline": "BY T. MATHALISE — NOVEMBER 2026",
+    "excerpt": "After years of melted connectors and bulky adapters, hardware makers are quietly standardizing around a single, open power spec.",
     "image": "images/gpu.jpg",
+    "pullQuote": "“Reliability should never require a third-party adapter just to keep your graphics card from melting.”",
     "body": [
       "After years of melted connectors and bulky adapters, hardware makers are quietly standardizing around a single, open power spec.",
       "For PC builders, this means cleaner cable management, safer power delivery, and no more hunting for third-party adapters."
-    ],
-    "pullQuote": "“Reliability should never require a third-party adapter just to keep your graphics card from melting.”"
+    ]
   },
   {
-    "id": "indie-rpg",
-    "tag": "GAMES",
-    "title": "Indie Studio Ships 60fps Open-World RPG Under 4GB",
-    "deck": "Smart procedural textures prove modern games do not need 150GB installs to look sharp and run smoothly.",
-    "byline": "BY T. MATHALISE — NOVEMBER 2026 • $0.00",
+    "id": "world-markets",
+    "featured": false,
+    "frontPage": true,
+    "category": "world",
+    "tag": "WORLD",
+    "title": "Global Markets React to New Digital Trade Rules",
+    "byline": "BY T. MATHALISE — NOVEMBER 2026",
+    "excerpt": "Finance ministers agree on a cross-border framework for digital assets and tech tariffs.",
     "image": "images/gpu.jpg",
     "body": [
-      "Smart procedural textures prove modern games do not need 150GB installs to look sharp and run smoothly.",
-      "The two-person dev team built custom compression tools that stream world geometry on the fly."
-    ],
-    "pullQuote": "“In an industry obsessed with bloat, restraint has become the ultimate superpower.”"
+      "Finance ministers announced a new framework today aimed at simplifying cross-border digital trade."
+    ]
   }
 ]

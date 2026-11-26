@@ -17,15 +17,21 @@
     <header class="masthead">
       <!-- Band 1: Utility & Theme Switcher -->
       <div class="masthead-utility">
-        <span>VOL. 01 — NO. 001 | FREE EDITION</span>
-        <div class="theme-switcher">
-          <button class="theme-btn active" data-theme="newsprint">
-            NEWSPRINT
-          </button>
-          <button class="theme-btn" data-theme="aged">AGED</button>
-          <button class="theme-btn" data-theme="night">NIGHT INK</button>
-        </div>
-      </div>
+  <span>VOL. 01 — NO. 001 | FREE EDITION</span>
+  <div class="utility-right">
+    <div class="theme-switcher">
+      <button class="theme-btn active" data-theme="newsprint">NEWSPRINT</button>
+      <button class="theme-btn" data-theme="aged">AGED</button>
+      <button class="theme-btn" data-theme="night">NIGHT INK</button>
+    </div>
+    <button id="search-toggle" class="search-toggle" aria-label="Open search" title="Search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+  </div>
+</div>
 
       <!-- Band 2: Boxed Ears + Main Title -->
       <div class="masthead-main">
@@ -56,74 +62,30 @@
   <a href="#" class="active-nav" data-nav="all">Front Page</a>
   <a href="#" data-nav="tech">Tech</a>
   <a href="#" data-nav="games">Games</a>
-  <a href="#" data-nav="hardware">Hardware</a>
+  <a href="#" data-nav="world">World</a>
   <a href="#" data-nav="reviews">Reviews</a>
-  <a href="#" data-nav="wire">The Wire</a>
+  
 </nav>
+
+<form id="search-form" class="search-bar">
+  <input
+    type="search"
+    id="search-input"
+    placeholder="Search headlines, topics, or keywords..."
+    aria-label="Search stories"
+  />
+  <button type="submit" id="search-btn">SEARCH</button>
+</form>
     </header>
     <main class="broadsheet-grid">
-      <!-- Column 1: Lead Story -->
-      <article class="lead-story" data-category="tech">
-        <span class="tag">TECH</span>
-        <div class="glitch-art">
-          <img
-            src="images/gpu.jpg"
-            alt="Next-gen graphics card"
-            class="article-img"
-          />
-        </div>
-        <a href="article.html?id=gpu-cables" class="headline-link">
-          <h2>Next-Gen GPUs Are finally Ditching Proprietary Cables</h2>
-        </a>
-        <p class="byline">BY T. MATHALISE - 12 MINS AGO</p>
-        <p class="excerpt">
-          After years of melted connectors and bulky adapters, hardware makers
-          are quietly standardizing around a single, open power spec.
-        </p>
-      </article>
+    <!-- Lead Story (Auto-loaded from articles.json) -->
+<div id="lead-story-container"></div>
 
-      <!-- Column 2: Secondary Stories -->
-      <section class="secondary-stories">
-        <article class="story-card" data-category="games">
-          <span class="tag">GAMES</span>
-          <a href="article.html?id=indie-rpg" class="headline-link">
-            <h3>Indie Studio Ships 60fps Open-World RPG Under 4GB</h3>
-          </a>
-          <p class="excerpt">
-            Frame pacing and sharp text scaling make QHD the sweet spot in 2026.
-          </p>
-        </article>
-      </section>
+<!-- Secondary Stories (Auto-loaded from articles.json) -->
+<section id="secondary-stories-container" class="secondary-stories"></section>
+      
 
-      <!-- Column 3: Break Wire -->
-      <aside class="breaking-wire">
-        <h2 class="wire-header">BREAKING WIRE</h2>
-        <div class="wire-filters">
-          <button class="filter-btn active" data-filter="all">ALL</button>
-          <button class="filter-btn" data-filter="tech">TECH</button>
-          <button class="filter-btn" data-filter="games">GAMES</button>
-        </div>
-        <ul class="wire-list">
-          <li data-category="tech">
-            <span class="time">16:20</span>
-            <p>
-              Major browser engine drops manifest restrictions for ad blockers.
-            </p>
-          </li>
-          <li data-category="games">
-            <span class="time">15:45</span>
-            <p>
-              Surprise console firmware update adds native frame-rate counter.
-            </p>
-          </li>
-          <li data-category="tech">
-            <span class="time">14:10</span>
-            <p>
-              Open-source AI coding tool hits 1M local downloads in 48 hours.
-            </p>
-          </li>
-        </ul>
-      </aside>
+    
     </main>
 
         <h1 id="modal-title"></h1>

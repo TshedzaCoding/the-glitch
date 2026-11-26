@@ -332,9 +332,9 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  /* Vintage high-contrast newsprint ink look */
   filter: grayscale(100%) contrast(1.25);
-  transition: filter 0.25s ease, transform 0.25s ease;
+  /* Holds color for 10s after mouse leaves, then slowly fades back over 2s */
+  transition: filter 2s ease 10s, transform 0.25s ease;
 }
 
 /* Subtle halftone / scanline texture over the photo */
@@ -361,6 +361,8 @@ body {
 .glitch-art:hover .article-img {
   filter: grayscale(0%) contrast(1.1);
   transform: scale(1.02);
+  /* Snaps into color immediately on hover */
+  transition: filter 0.2s ease 0s, transform 0.25s ease;
 }
 
 /* 12. Full Article Page */
@@ -546,4 +548,83 @@ body {
   font-size: 0.72rem;
   font-weight: bold;
   letter-spacing: 0.08em;
+}
+
+/* Top-Right Utility Group & Magnifying Glass */
+.utility-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  padding: 4px 7px;
+  cursor: pointer;
+}
+
+.search-toggle:hover,
+.search-toggle.active {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Collapsible Search Bar (Hidden by Default) */
+.search-bar {
+  display: none;
+  gap: 8px;
+  max-width: 520px;
+  margin: 14px auto 0;
+}
+
+.search-bar.open {
+  display: flex;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: var(--accent);
+}
+
+.search-bar button {
+  background-color: var(--ink);
+  color: var(--paper);
+  border: 1.5px solid var(--ink);
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.pull-quote {
+  margin: 26px 0;
+  padding: 6px 0 6px 18px;
+  border-left: 4px solid var(--accent);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.35;
 }
