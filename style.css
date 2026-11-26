@@ -56,19 +56,23 @@ body {
 }
 
 .theme-btn {
-  background: transparent;
-  border: 1px solid var(--ink);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--paper);
+  border: 1.5px solid var(--ink);
   color: var(--ink);
   font-family: "Space Mono", monospace;
-  font-size: 0.68rem;
-  font-weight: bold;
-  padding: 2px 7px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 0;
   cursor: pointer;
 }
 
 .theme-btn.active {
-  background: var(--ink);
+  background-color: var(--ink);
   color: var(--paper);
+  border-color: var(--ink);
 }
 
 /* Main Title + Boxed Ears */

@@ -48,72 +48,35 @@ themeButtons.forEach((btn) => {
   });
 });
 
-// Hovering Paper Article Modal
-const modal = document.getElementById("article-modal");
-const modalClose = document.getElementById("modal-close");
-const headlineLinks = document.querySelectorAll(".headline-link");
+// Top Navigation Filtering & Wire Jump
+const navLinks = document.querySelectorAll(".main-nav a");
+const allStories = document.querySelectorAll(".lead-story, .story-card");
+const wireSection = document.querySelector(".breaking-wire");
 
-let cachedArticles = null;
-
-async function openArticleModal(articleId) {
-  if (!cachedArticles) {
-    const res = await fetch("articles.json");
-    cachedArticles = await res.json();
-  }
-
-  const story = cachedArticles.find((a) => a.id === articleId);
-  if (!story) return;
-
-  document.getElementById("modal-tag").textContent = story.tag;
-  document.getElementById("modal-title").textContent = story.title;
-  document.getElementById("modal-deck").textContent = story.deck || "";
-  document.getElementById("modal-byline").textContent = story.byline;
-  document.getElementById("modal-img").src = story.image;
-
-  const bodyContainer = document.getElementById("modal-body");
-  bodyContainer.innerHTML = "";
-
-  story.body.forEach((paragraph, index) => {
-    const p = document.createElement("p");
-    p.textContent = paragraph;
-    if (index === 0) p.classList.add("drop-cap");
-    bodyContainer.appendChild(p);
-
-    // Insert concept pull-quote after the first paragraph
-    if (index === 0 && story.pullQuote) {
-      const quote = document.createElement("blockquote");
-      quote.className = "modal-pullquote";
-      quote.textContent = story.pullQuote;
-      bodyContainer.appendChild(quote);
-    }
-  });
-
-  modal.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
-function closeArticleModal() {
-  modal.classList.remove("open");
-  document.body.style.overflow = "";
-}
-
-headlineLinks.forEach((link) => {
+navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    const url = new URL(link.href);
-    const id = url.searchParams.get("id");
-    if (id) openArticleModal(id);
+
+    // Highlight active nav tab
+    navLinks.forEach((l) => l.classList.remove("active-nav"));
+    link.classList.add("active-nav");
+
+    const section = link.dataset.nav;
+
+    // If "The Wire" is clicked, scroll smoothly down to it
+    if (section === "wire" && wireSection) {
+      allStories.forEach((story) => (story.style.display = "block"));
+      wireSection.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    // Filter front page stories by category
+    allStories.forEach((story) => {
+      if (section === "all" || story.dataset.category === section) {
+        story.style.display = "block";
+      } else {
+        story.style.display = "none";
+      }
+    });
   });
-});
-
-modalClose.addEventListener("click", closeArticleModal);
-
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) closeArticleModal();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.classList.contains("open")) {
-    closeArticleModal();
-  }
 });

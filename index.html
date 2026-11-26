@@ -53,17 +53,17 @@
 
       <!-- Band 4: Full Category Navigation -->
       <nav class="main-nav">
-        <a href="index.html" class="active-nav">Front Page</a>
-        <a href="#">Tech</a>
-        <a href="#">Games</a>
-        <a href="#">Hardware</a>
-        <a href="#">Reviews</a>
-        <a href="#">The Wire</a>
-      </nav>
+  <a href="#" class="active-nav" data-nav="all">Front Page</a>
+  <a href="#" data-nav="tech">Tech</a>
+  <a href="#" data-nav="games">Games</a>
+  <a href="#" data-nav="hardware">Hardware</a>
+  <a href="#" data-nav="reviews">Reviews</a>
+  <a href="#" data-nav="wire">The Wire</a>
+</nav>
     </header>
     <main class="broadsheet-grid">
       <!-- Column 1: Lead Story -->
-      <article class="lead-story">
+      <article class="lead-story" data-category="tech">
         <span class="tag">TECH</span>
         <div class="glitch-art">
           <img
@@ -84,7 +84,7 @@
 
       <!-- Column 2: Secondary Stories -->
       <section class="secondary-stories">
-        <article class="story-card">
+        <article class="story-card" data-category="games">
           <span class="tag">GAMES</span>
           <a href="article.html?id=indie-rpg" class="headline-link">
             <h3>Indie Studio Ships 60fps Open-World RPG Under 4GB</h3>
@@ -125,15 +125,6 @@
         </ul>
       </aside>
     </main>
-    <!-- Hovering Paper Article Modal -->
-    <div id="article-modal" class="modal-backdrop" aria-hidden="true">
-      <article class="modal-paper">
-        <div class="modal-topbar">
-          <span class="tag" id="modal-tag"></span>
-          <button id="modal-close" class="modal-close">
-            [ ESC / CLOSE ✕ ]
-          </button>
-        </div>
 
         <h1 id="modal-title"></h1>
         <p class="modal-deck" id="modal-deck"></p>
