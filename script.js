@@ -32,19 +32,34 @@ if (dateEl) {
   });
 }
 
-// Paper Theme Switcher
+// Paper Theme Switcher + localStorage Persistence
 const themeButtons = document.querySelectorAll(".theme-btn");
+
+function applyTheme(theme) {
+  // 1. Apply the CSS theme attribute
+  if (theme === "newsprint") {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", theme);
+  }
+
+  // 2. Highlight the matching button
+  themeButtons.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.theme === theme);
+  });
+
+  // 3. Save the choice in the browser
+  localStorage.setItem("glitch-theme", theme);
+}
+
+// Load any saved theme when the front page opens
+const savedTheme = localStorage.getItem("glitch-theme") || "newsprint";
+applyTheme(savedTheme);
+
+// Update and save whenever a button is clicked
 themeButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    themeButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const theme = btn.dataset.theme;
-    if (theme === "newsprint") {
-      document.documentElement.removeAttribute("data-theme");
-    } else {
-      document.documentElement.setAttribute("data-theme", theme);
-    }
+    applyTheme(btn.dataset.theme);
   });
 });
 

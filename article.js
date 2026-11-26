@@ -1,3 +1,9 @@
+// Apply saved theme from the front page
+const savedTheme = localStorage.getItem("glitch-theme");
+if (savedTheme && savedTheme !== "newsprint") {
+  document.documentElement.setAttribute("data-theme", savedTheme);
+}
+
 // 1. Read the ?id= value from the URL
 const params = new URLSearchParams(window.location.search);
 const articleId = params.get("id");
