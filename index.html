@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -31,7 +31,7 @@
       <div class="masthead-main">
         <div class="ear-box">
           <strong>PRICE: $0.00</strong>
-          <span>SYSTEM ERROR</span>
+          <span class="accent-text">(SYSTEM ERROR)</span>
         </div>
 
         <div class="masthead-title">
@@ -39,16 +39,16 @@
         </div>
 
         <div class="ear-box">
-          <strong>NO PAYWALLS.</strong>
-          <span>FREE 99.</span>
+          <strong>NO PAYWALLS</strong>
+          <span>LIKE A NEWSPAPER</span>
         </div>
       </div>
 
       <!-- Band 3: Live Date Bar -->
       <div class="masthead-datebar">
         <span id="live-date">LOADING DATE...</span>
-        <span>"Built well. Priced wrong."</span>
-        <span>TECH GAME REVIEW</span>
+        <span class="motto">“Built well. Priced wrong.”</span>
+        <span>TECH • GAMES • REVIEWS</span>
       </div>
 
       <!-- Band 4: Full Category Navigation -->
@@ -64,7 +64,7 @@
     <main class="broadsheet-grid">
       <!-- Column 1: Lead Story -->
       <article class="lead-story">
-        <sapn class="tag">TECH</sapn>
+        <span class="tag">TECH</span>
         <div class="glitch-art">
           <img
             src="images/gpu.jpg"
@@ -130,10 +130,13 @@
       <article class="modal-paper">
         <div class="modal-topbar">
           <span class="tag" id="modal-tag"></span>
-          <button id="modal-close" class="modal-close">[ X ] CLOSE</button>
+          <button id="modal-close" class="modal-close">
+            [ ESC / CLOSE ✕ ]
+          </button>
         </div>
 
         <h1 id="modal-title"></h1>
+        <p class="modal-deck" id="modal-deck"></p>
         <p class="byline" id="modal-byline"></p>
 
         <div class="glitch-art">
@@ -141,6 +144,11 @@
         </div>
 
         <div id="modal-body"></div>
+
+        <div class="modal-footer-stamp">
+          <span class="accent-text">●</span> FREE EDITION — READ FOR $0.00. NO
+          POP-UPS, NO PAYWALLS. <span class="accent-text">●</span>
+        </div>
       </article>
     </div>
 

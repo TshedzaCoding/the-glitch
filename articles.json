@@ -3,22 +3,26 @@
     "id": "gpu-cables",
     "tag": "TECH",
     "title": "Next-Gen GPUs Are Finally Ditching Proprietary Cables",
-    "byline": "BY T. MATHALISE — NOVEMBER 2026",
+    "deck": "Hardware makers are quietly standardizing around a single, open power spec after years of melted connectors.",
+    "byline": "BY T. MATHALISE — NOVEMBER 2026 • $0.00",
     "image": "images/gpu.jpg",
     "body": [
       "After years of melted connectors and bulky adapters, hardware makers are quietly standardizing around a single, open power spec.",
       "For PC builders, this means cleaner cable management, safer power delivery, and no more hunting for third-party adapters."
-    ]
+    ],
+    "pullQuote": "“Reliability should never require a third-party adapter just to keep your graphics card from melting.”"
   },
   {
     "id": "indie-rpg",
     "tag": "GAMES",
     "title": "Indie Studio Ships 60fps Open-World RPG Under 4GB",
-    "byline": "BY T. MATHALISE — NOVEMBER 2026",
+    "deck": "Smart procedural textures prove modern games do not need 150GB installs to look sharp and run smoothly.",
+    "byline": "BY T. MATHALISE — NOVEMBER 2026 • $0.00",
     "image": "images/gpu.jpg",
     "body": [
       "Smart procedural textures prove modern games do not need 150GB installs to look sharp and run smoothly.",
       "The two-person dev team built custom compression tools that stream world geometry on the fly."
-    ]
+    ],
+    "pullQuote": "“In an industry obsessed with bloat, restraint has become the ultimate superpower.”"
   }
 ]

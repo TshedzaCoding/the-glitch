@@ -26,7 +26,7 @@
 body {
   background-color: var(--paper);
   color: var(--ink);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   padding: 20px;
   /* Subtle newsprint grain texture */
   background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 0);
@@ -102,18 +102,23 @@ body {
 .masthead-datebar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: "Space Mono", monospace;
   font-size: 0.72rem;
   text-transform: uppercase;
-  padding: 7px 0;
-  border-top: 3px double var(--ink);
-  border-bottom: 1px solid var(--ink);
+  padding: 10px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  box-shadow: inset 0 3px 0 var(--paper), inset 0 4px 0 var(--ink),
+              inset 0 -3px 0 var(--paper), inset 0 -4px 0 var(--ink);
 }
+
 .masthead-datebar .motto {
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
+  font-weight: 700;
   text-transform: none;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 /* Full Navigation */
@@ -480,4 +485,43 @@ body {
   font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 16px;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.tag {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.modal-deck {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+.modal-pullquote {
+  margin: 22px 0;
+  padding: 6px 0 6px 18px;
+  border-left: 4px solid var(--accent);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.modal-footer-stamp {
+  margin-top: 28px;
+  padding: 12px;
+  border: 1px dashed var(--ink);
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
 }
